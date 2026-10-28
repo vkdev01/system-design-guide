@@ -1,0 +1,41 @@
+/* Small refinements on top of Material for MkDocs. */
+
+:root {
+  --md-primary-fg-color: #16324f;
+  --md-accent-fg-color: #b4531a;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.md-typeset h2 {
+  margin-top: 2.2em;
+  font-weight: 650;
+}
+
+.md-typeset table:not([class]) {
+  font-size: 0.78rem;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.76rem;
+}
+
+/* Mermaid diagrams get a little breathing room. */
+.md-typeset .mermaid {
+  margin: 1.4em 0;
+  text-align: center;
+}
+
+/* The one-line summary block at the top of every page. */
+.md-typeset .lead {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  border-left: 3px solid var(--md-accent-fg-color);
+  padding-left: 0.9rem;
+  margin-bottom: 1.6rem;
+}
