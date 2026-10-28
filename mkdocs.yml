@@ -1,0 +1,185 @@
+site_name: System Design Guide
+site_url: https://vkdev01.github.io/system-design-guide/
+site_description: >-
+  An exhaustive, worked-through guide to system design — fundamentals, building
+  blocks, patterns, case studies and interview practice.
+site_author: vkdev01
+repo_name: vkdev01/system-design-guide
+repo_url: https://github.com/vkdev01/system-design-guide
+edit_uri: edit/main/docs/
+copyright: MIT licensed. Built and maintained by vkdev01.
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - def_list
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      lang: en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vkdev01
+  generator: false
+
+nav:
+  - Home: index.md
+  - Start here:
+      - getting-started/index.md
+      - How to use this guide: getting-started/how-to-use.md
+      - Anatomy of the interview: getting-started/interview-format.md
+      - A framework for answering: getting-started/answering-framework.md
+      - Back-of-the-envelope maths: getting-started/estimation.md
+      - Study plan: getting-started/study-plan.md
+  - Fundamentals:
+      - fundamentals/index.md
+      - Scalability: fundamentals/scalability.md
+      - Latency and throughput: fundamentals/latency-and-throughput.md
+      - Availability and reliability: fundamentals/availability.md
+      - Consistency models: fundamentals/consistency.md
+      - ACID, BASE and transactions: fundamentals/transactions.md
+      - Replication and partitioning: fundamentals/replication-and-partitioning.md
+      - Caching theory: fundamentals/caching.md
+      - Networking for system design: fundamentals/networking.md
+      - Data storage models: fundamentals/storage-models.md
+      - Delivery semantics: fundamentals/delivery-semantics.md
+  - Building blocks:
+      - building-blocks/index.md
+      - Load balancer: building-blocks/load-balancer.md
+      - API gateway: building-blocks/api-gateway.md
+      - CDN: building-blocks/cdn.md
+      - Object storage: building-blocks/object-storage.md
+      - Cache: building-blocks/cache.md
+      - Message queue: building-blocks/message-queue.md
+      - Database indexes: building-blocks/indexes.md
+      - Read replicas: building-blocks/read-replicas.md
+      - Sharding: building-blocks/sharding.md
+      - Rate limiter: building-blocks/rate-limiter.md
+      - Circuit breaker: building-blocks/circuit-breaker.md
+      - Retry and backoff: building-blocks/retry.md
+      - Idempotency: building-blocks/idempotency.md
+      - Distributed locks: building-blocks/distributed-locks.md
+      - Search index: building-blocks/search-index.md
+      - Service discovery: building-blocks/service-discovery.md
+      - Observability: building-blocks/observability.md
+      - Sagas and workflows: building-blocks/sagas.md
+      - Batch and stream processing: building-blocks/batch-and-stream.md
+  - The 12 patterns:
+      - patterns/index.md
+      - "01 · Slow reads → cache": patterns/slow-reads-cache.md
+      - "02 · Write spikes → queue": patterns/write-spikes-queue.md
+      - "03 · Too much traffic → load balancer": patterns/traffic-load-balancer.md
+      - "04 · Read-heavy DB → replicas": patterns/read-heavy-replicas.md
+      - "05 · Write-heavy DB → shard": patterns/write-heavy-shard.md
+      - "06 · Slow queries → indexes": patterns/slow-queries-indexes.md
+      - "07 · Slow files → object storage + CDN": patterns/slow-files-object-storage-cdn.md
+      - "08 · Temporary failures → retry": patterns/temporary-failures-retry.md
+      - "09 · Too many requests → rate limit": patterns/too-many-requests-rate-limit.md
+      - "10 · One service failing → breaker": patterns/one-service-failing-breaker.md
+      - "11 · Duplicate requests → idempotency": patterns/duplicate-requests-idempotency.md
+      - "12 · Can't see what broke → telemetry": patterns/cannot-see-what-broke-telemetry.md
+      - Choosing between overlapping fixes: patterns/choosing-between-fixes.md
+  - Case studies:
+      - case-studies/index.md
+      - URL shortener: case-studies/url-shortener.md
+      - Design a rate limiter: case-studies/rate-limiter-service.md
+      - Unique ID generator: case-studies/id-generator.md
+      - Web crawler: case-studies/web-crawler.md
+      - News feed: case-studies/news-feed.md
+      - Chat system: case-studies/chat.md
+      - Video platform: case-studies/video-platform.md
+      - File storage and sync: case-studies/file-sync.md
+      - Ride hailing: case-studies/ride-hailing.md
+      - Ticket booking: case-studies/ticket-booking.md
+      - Payments and ledger: case-studies/payments-ledger.md
+      - Notification system: case-studies/notifications.md
+      - Metrics and alerting: case-studies/metrics-pipeline.md
+      - Search autocomplete: case-studies/autocomplete.md
+      - Distributed cache: case-studies/distributed-cache.md
+  - Interview practice:
+      - interview/index.md
+      - Trade-off cheat sheet: interview/trade-off-cheatsheet.md
+      - Common mistakes: interview/common-mistakes.md
+      - Mock walkthrough: interview/mock-walkthrough.md
+      - Question bank: interview/question-bank.md
+      - Glossary: interview/glossary.md
+  - Code samples:
+      - code/index.md
+      - Retry with backoff: code/retry.md
+      - Token bucket: code/token-bucket.md
+      - Circuit breaker: code/circuit-breaker.md
+      - Idempotency store: code/idempotency.md
+      - Consistent hashing: code/consistent-hashing.md
+      - Shard router: code/sharding.md
+      - LRU cache: code/lru-cache.md
+  - About: about.md
